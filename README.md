@@ -1,3 +1,3 @@
 # news-aggregator
-## Status
+### Status
 Work in progress
