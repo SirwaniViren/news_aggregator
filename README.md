@@ -8,7 +8,9 @@ git clone https://github.com/SirwaniViren/news_aggregator.git
 cd news_aggregator
 ```
 Activate the virtualenv for your project.
+
 Apply migrations:
+
 ```
 python manage.py migrate
 ```
@@ -16,6 +18,9 @@ Run the Server:
 ```
 python manage.py runserver
 ```
+## Credit/Acknowledgment
+Took inspiration from 'Data Flair':
 
+[Learn to build News Aggregator Web App](https://data-flair.training/blogs/django-project-news-aggregator-app/)
 ## Status
 Work in progress
