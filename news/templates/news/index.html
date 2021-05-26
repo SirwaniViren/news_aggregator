@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>news_aggregator</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    </head>
-    <body>
-        <center><h1>news_aggregator</h1>
-            <a href="{% url 'getArticle' %}" class="article_getter">news</a>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div>
+		<center>
+			<h1>news_aggregator</h1>
+            <a method="POST" href="{% url 'getArticle' %}" class="article_getter">news</a>
         </center>
-        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+	</div>
+	<div class="card-columns" style="padding: 10px; margin: 20px;">
+		{% for article in article_list %}
+		<div class="card"">
+			<img class="card-img-top" src = "{{ article.image }}">
+			<div class="card-body">
+				<h5 class="card-title">
+					<div class="card-body">
+						<a href="{{article.title_url}}"><h5 class="card-title">{{article.title}}</h5></a>
+						<p class = "class-body">{{article.summary}}</p>
+						<p class = "class-body">{{article.tag}}</p>
+					</div>
+				</h5>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</body>
 </html>

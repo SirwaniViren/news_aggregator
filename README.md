@@ -8,10 +8,12 @@ git clone https://github.com/SirwaniViren/news_aggregator.git
 cd news_aggregator
 ```
 Activate the virtualenv for your project.
+You can use any  relational database management system. I have used PostgreSQL in this case.
 
 Apply migrations:
 
 ```
+python manage.py makemigrations
 python manage.py migrate
 ```
 Run the Server:
@@ -23,4 +25,4 @@ Took inspiration from 'Data Flair':
 
 [Learn to build News Aggregator Web App](https://data-flair.training/blogs/django-project-news-aggregator-app/)
 ## Status
-Work in progress
+Improvements to be made

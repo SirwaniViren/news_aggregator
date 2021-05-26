@@ -47,13 +47,15 @@ def scrape():
     bbc_frame = pd.DataFrame({"title":titles, "url":urls, "image":images,"summary":summaries,"tag":tags})
     return bbc_frame
 
-def getArticle():
+def getArticle(request):
     frame = scrape()
     for i in range(len(frame)):
         new_piece = Article()
         new_piece.title = str(frame.loc[i][0])
         new_piece.title_url = frame.loc[i][1]
         new_piece.image = str(frame.loc[i][2])
+        new_piece.summary = str(frame.loc[i][3])
+        new_piece.tag = str(frame.loc[i][4])
         new_piece.save()
     return redirect("../")
 
